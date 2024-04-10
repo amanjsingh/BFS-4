@@ -16,7 +16,7 @@ public class SnakesAndLadders {
             boolean flag = true;
             int i = length - 1;
             int j = 0;
-            while (flatBoardIndex < flatBoard.length) { //O(N*N)
+            while (flatBoardIndex < flatBoard.length) { // O(N*N)
                 if (board[i][j] == -1) {
                     flatBoard[flatBoardIndex] = -1;
                 } else {
@@ -44,14 +44,14 @@ public class SnakesAndLadders {
             // O(6*N*N)
             queue.add(0);
             flatBoard[0] = -2; // Mark visited
-            while (!queue.isEmpty()) { //O(N*N)
+            while (!queue.isEmpty()) { // O(N*N)
                 int size = queue.size();
                 while (size > 0) { // Process Level
                     int curr = queue.poll();
                     if (curr == flatBoard.length - 1) {
                         return totalMoves;
                     }
-                    for (i = 1; i <= 6 && (curr + i < flatBoard.length); i++) { //O(6)
+                    for (i = 1; i <= 6 && (curr + i < flatBoard.length); i++) { // O(6)
                         int newPosition = curr + i;
                         if (flatBoard[newPosition] != -2) {
                             if (flatBoard[newPosition] == -1) {
@@ -61,8 +61,8 @@ public class SnakesAndLadders {
                                 if (flatBoard[flatBoard[newPosition]] != -2) {
                                     queue.add(flatBoard[newPosition]);
                                     flatBoard[newPosition] = -2; // Mark visited
-                                    // flatboard[flatBoard[newPosition]] = -2; This will eliminate any future
-                                    // shorter path
+                                    // flatboard[flatBoard[newPosition]] = -2;
+                                    // This will eliminate any future shorter path
                                 }
                             }
                         }
