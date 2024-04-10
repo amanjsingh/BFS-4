@@ -1,6 +1,9 @@
 import java.util.LinkedList;
 import java.util.Queue;
 
+// TC - O(MN)
+// SC - O(MN)
+
 public class MinesweeperBFS {
     class Solution {
         private final int[][] dirs = { { -1, -1 }, { -1, 0 }, { -1, 1 }, { 0, -1 }, { 0, 1 }, { 1, -1 }, { 1, 0 },
